@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MakeClient — Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        * { font-family: 'Inter', sans-serif; }
+        .text-gradient-gold { background: linear-gradient(135deg, #B8963C, #D4AF47, #B8963C); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .text-gradient-gold-strong { background: linear-gradient(135deg, #B8963C, #E8C84A); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .bg-grid-line { background-image: linear-gradient(90deg, #B8963C 1px, transparent 1px), linear-gradient(#B8963C 1px, transparent 1px); background-size: 50px 50px; }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { border-color: rgba(184,150,60,0.4); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04); transform: translateY(-2px); }
+        .nav-link { position: relative; }
+        .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: #B8963C; transition: width 0.3s ease; }
+        .nav-link:hover::after { width: 100%; }
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="bg-gray-50 antialiased">
+
+    <!-- ──────────────────────────────────────────────── -->
+    <!-- STICKY NAVBAR                                   -->
+    <!-- ──────────────────────────────────────────────── -->
+    <nav class="bg-gray-900/95 backdrop-blur-md border-b border-gray-800 fixed top-0 left-0 right-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <img src="public/logo-white.png" alt="MAKE CLIENT" class="h-7 w-auto object-contain" />
+                <span class="text-gray-500 font-normal text-sm hidden sm:inline">make client</span>
+            </div>
+            <div class="hidden md:flex items-center gap-6 text-sm">
+                <a href="#story" class="text-gray-400 hover:text-white transition-colors nav-link">Story</a>
+                <a href="#why-failed" class="text-gray-400 hover:text-white transition-colors nav-link">Why It Failed</a>
+                <a href="#learnings" class="text-gray-400 hover:text-white transition-colors nav-link">Learnings</a>
+                <a href="#product" class="text-gray-400 hover:text-white transition-colors nav-link">Product</a>
+                <a href="#experience" class="text-gray-400 hover:text-white transition-colors nav-link">Experience</a>
+            </div>
+            <div class="flex items-center gap-2 text-xs text-gray-500 md:hidden">
+                <span class="text-[#B8963C] font-semibold">#ShipAndLearn</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ──────────────────────────────────────────────── -->
+    <!-- THE STORY — HERO                               -->
+    <!-- ──────────────────────────────────────────────── -->
+    <section id="story" class="relative bg-gray-900 overflow-hidden pt-14">
+        <div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900"></div>
+        <div class="absolute top-20 left-10 w-72 h-72 bg-[#B8963C]/5 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-20 right-10 w-96 h-96 bg-[#D4AF47]/5 rounded-full blur-3xl"></div>
+
+        <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
+            <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-full mb-8">
+                <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+                <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">The Real Story</span>
+            </div>
+
+            <div class="grid md:grid-cols-5 gap-12 items-start">
+                <div class="md:col-span-3">
+                    <h1 class="text-4xl sm:text-5xl font-bold text-white mb-6 leading-[1.15]">
+                        Two startups, zero exits,<br/>
+                        <span class="text-gradient-gold-strong">infinite learnings</span>
+                    </h1>
+                    <p class="text-gray-300 text-lg leading-relaxed mb-4">
+                        I'm a <span class="text-white font-semibold">backend/systems engineer</span> who builds in Rust
+                        (Axum, Tokio, SQLx) and Node.js.                         MakeClient was my <span class="text-white">second attempt</span>
+                        at building a SaaS product — the first was <span class="text-white font-medium">Winqroo</span>,
+                        an AI-powered content intelligence &amp; influencer marketing platform. Both taught me different things.
+                    </p>
+                    <p class="text-gray-400 text-base leading-relaxed mb-6">
+                        MakeClient was built for CAs, accountants, and tax consultants in India — with REST APIs,
+                        RBAC, document workflows, billing, and compliance tracking. We had the product,
+                        we had paying users. But we didn't have <em class="text-white font-medium">product-market fit</em>.
+                        After 6 months, I made the hardest call: shut it down.
+                    </p>
+
+                    <div class="flex flex-wrap gap-6 text-sm">
+                        <div><span class="text-white font-bold">2.5 yrs</span> <span class="text-gray-500">production exp</span></div>
+                        <div><span class="text-white font-bold">300+</span> <span class="text-gray-500">people interviewed</span></div>
+                        <div><span class="text-white font-bold">120+</span> <span class="text-gray-500">firms visited</span></div>
+                        <div><span class="text-white font-bold">2</span> <span class="text-gray-500">startups built &amp; shut</span></div>
+                    </div>
+                </div>
+
+                <div class="md:col-span-2 bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-sm">
+                    <h3 class="text-white font-bold text-sm uppercase tracking-wider mb-4">About Me</h3>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex justify-between"><span class="text-gray-400">Role</span><span class="text-white font-medium">Backend & Systems Engineer</span></div>
+                        <div class="flex justify-between"><span class="text-gray-400">Core Stack</span><span class="text-white font-medium">Rust, Axum, Tokio, SQLx</span></div>
+                        <div class="flex justify-between"><span class="text-gray-400">Backend</span><span class="text-white font-medium">Node.js, Express, REST APIs</span></div>
+                        <div class="flex justify-between"><span class="text-gray-400">DB & Cache</span><span class="text-white font-medium">PostgreSQL, MySQL, Redis</span></div>
+                        <div class="flex justify-between"><span class="text-gray-400">Infra</span><span class="text-white font-medium">Docker, Nginx, Linux, AWS</span></div>
+                        <div class="flex justify-between"><span class="text-gray-400">Other</span><span class="text-white font-medium">Python, FastAPI, Gemini API</span></div>
+                        <div class="pt-3 border-t border-white/10">
+                            <div class="flex justify-between"><span class="text-gray-400">Attempts</span><span class="text-white font-medium">Winqroo → MakeClient</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-16">
+                <p class="text-gray-600 text-xs uppercase tracking-widest font-medium">Scroll to explore</p>
+                <svg class="w-5 h-5 mx-auto mt-2 text-gray-600 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- ──────────────────────────────────────────────── -->
+    <!-- DIVIDER — WHY IT FAILED                        -->
+    <!-- ──────────────────────────────────────────────── -->
+    <div id="why-failed" class="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 py-10 text-center border-y border-gray-800 scroll-mt-14">
+        <p class="text-gray-400 text-sm uppercase tracking-widest font-medium">↓ Why it didn't work ↓</p>
+    </div>
+
+    <!-- ──────────────────────────────────────────────── -->
+    <!-- WHAT WENT WRONG — FAILURE ANALYSIS              -->
+    <!-- ──────────────────────────────────────────────── -->
+    <section class="relative bg-gray-900 overflow-hidden py-24">
+        <div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900"></div>
+        <div class="absolute top-40 left-20 w-96 h-96 bg-red-900/10 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-40 right-20 w-96 h-96 bg-[#B8963C]/5 rounded-full blur-3xl"></div>
+
+        <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-full mb-10">
+                <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Honest Post-Mortem</span>
+            </div>
+
+            <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
+                Why It Didn't Work<br/>
+                <span class="text-gray-400 font-normal text-2xl sm:text-3xl">(&amp; what I'd do differently)</span>
+            </h2>
+            <p class="text-gray-400 text-lg mb-16 max-w-3xl">
+                Building MakeClient was the most educational failure of my career. Here's the raw truth
+                about why it didn't find its place in the Indian market.
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-20">
+                <div class="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/[0.07] transition-colors">
+                    <div class="w-12 h-12 rounded-xl bg-red-500/10 flex items-center justify-center mb-5">
+                        <svg class="w-6 h-6 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    </div>
+                    <h3 class="text-white font-bold text-lg mb-3">Over-engineered for the wrong problem</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        I built for what I <em class="text-white">thought</em> the market needed — a full platform with every bell and whistle.
+                        In reality, small Indian CA firms wanted a simple WhatsApp + Excel replacement.
+                        I gave them Salesforce; they wanted a shared notebook.
+                    </p>
+                </div>
+                <div class="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/[0.07] transition-colors">
+                    <div class="w-12 h-12 rounded-xl bg-red-500/10 flex items-center justify-center mb-5">
+                        <svg class="w-6 h-6 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                    </div>
+                    <h3 class="text-white font-bold text-lg mb-3">Talked to 300+ people — still got it wrong</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        I walked into 120+ firms, interacted with 75+ CAs and 50+ accountants. But asking
+                        people what they want and observing what they <em class="text-white">actually do</em> are very different things.
+                        They said they wanted a &ldquo;platform&rdquo; — what they meant was &ldquo;something simple that just works.&rdquo;
+                        I translated their words into my assumptions.
+                    </p>
+                </div>
+                <div class="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/[0.07] transition-colors">
+                    <div class="w-12 h-12 rounded-xl bg-red-500/10 flex items-center justify-center mb-5">
+                        <svg class="w-6 h-6 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    </div>
+                    <h3 class="text-white font-bold text-lg mb-3">Pricing mismatch</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Indian CA firms operate on razor-thin margins and are used to one-time payments for
+                        software. My SaaS subscription model was a non-starter. I should have started with
+                        a freemium or a lightweight free tier to build trust and habit.
+                    </p>
+                </div>
+                <div class="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/[0.07] transition-colors">
+                    <div class="w-12 h-12 rounded-xl bg-red-500/10 flex items-center justify-center mb-5">
+                        <svg class="w-6 h-6 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg>
+                    </div>
+                    <h3 class="text-white font-bold text-lg mb-3">Trust deficit as a newcomer</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Finance firms are cautious by nature. They trust established names, peer referrals, and
+                        proven track records — not a landing page from an unknown founder. I was a solo
+                        builder trying to sell enterprise software without a reputation in the industry.
+                        In a market built on relationships, I had a product-led strategy.
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-white/5 border border-white/10 rounded-2xl p-10 md:p-14">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 bg-[#B8963C]/10 border border-[#B8963C]/20 rounded-full mb-6">
+                    <span class="text-xs font-bold text-[#B8963C] uppercase tracking-wider">Key Takeaway</span>
+                </div>
+                <div class="text-center">
+                    <p class="text-white text-2xl md:text-3xl font-bold mb-6 leading-relaxed">
+                        &ldquo;Your job isn't to write code. <br class="hidden sm:inline"/>
+                        <span class="text-[#B8963C]">Your job is to solve a problem someone will pay for.</span>&rdquo;
+                    </p>
+                    <p class="text-gray-400 text-base max-w-3xl mx-auto leading-relaxed">
+                        I learned that a working product is <span class="text-white font-semibold">table stakes</span>.
+                        The real challenge is distribution, trust-building, pricing, and truly understanding your
+                        customer's daily reality. I'd gladly trade 50% of my code for 5 more honest
+                        conversations about why they <em class="text-white">actually</em> said no.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ──────────────────────────────────────────────── -->
+    <!-- DIVIDER — LEARNINGS                            -->
+    <!-- ──────────────────────────────────────────────── -->
+    <div id="learnings" class="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 py-10 text-center border-y border-gray-800 scroll-mt-14">
+        <p class="text-gray-400 text-sm uppercase tracking-widest font-medium">↓ What I learned from both attempts ↓</p>
+    </div>
+
+    <!-- ──────────────────────────────────────────────── -->
+    <!-- WHAT FAILURE TAUGHT ME                         -->
+    <!-- ──────────────────────────────────────────────── -->
+    <section class="bg-white py-24">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center gap-2 px-4 py-2 bg-[#B8963C]/10 border border-[#B8963C]/20 rounded-full mb-6">
+                    <span class="text-xs font-bold text-[#B8963C] uppercase tracking-wider">Silver Linings</span>
+                </div>
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">
+                    What Failure <span class="text-gradient-gold">Taught Me</span>
+                </h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Two startups, two shutdowns. But every miss is a lesson — here's what I'm walking away with:
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="border-2 border-gray-100 rounded-2xl p-8 card-hover hover:border-[#B8963C]/40">
+                    <h3 class="text-lg font-bold text-gray-900 mb-5 flex items-center gap-3">
+                        <span class="w-10 h-10 rounded-lg bg-gradient-to-br from-[#B8963C] to-[#D4AF47] flex items-center justify-center text-white text-sm font-bold shrink-0">&#x2699;</span>
+                        Systems & Backend Engineering
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex gap-3 text-sm text-gray-600"><span class="text-[#B8963C] font-bold mt-0.5 shrink-0">→</span> Built production async backends in Rust (Axum, Tokio, SQLx) and Node.js</li>
+                        <li class="flex gap-3 text-sm text-gray-600"><span class="text-[#B8963C] font-bold mt-0.5 shrink-0">→</span> Designed REST APIs, JWT auth, RBAC, and MySQL schemas for billing, tasks, documents</li>
+                        <li class="flex gap-3 text-sm text-gray-600"><span class="text-[#B8963C] font-bold mt-0.5 shrink-0">→</span> Self-hosted production: Docker, GitHub Actions, Nginx, AWS Linux, Redis sessions</li>
+                        <li class="flex gap-3 text-sm text-gray-600"><span class="text-[#B8963C] font-bold mt-0.5 shrink-0">→</span> Built for a govt system serving real employees (Ministry of Energy, AP)</li>
+                        <li class="flex gap-3 text-sm text-gray-600"><span class="text-[#B8963C] font-bold mt-0.5 shrink-0">→</span> Distributed systems patterns: SELECT FOR UPDATE SKIP LOCKED, atomic Redis rate limiting</li>
+                    </ul>
+                </div>
+
+                <div class="border-2 border-gray-100 rounded-2xl p-8 card-hover hover:border-[#B8963C]/40">
+                    <h3 class="text-lg font-bold text-gray-900 mb-5 flex items-center gap-3">
+                        <span class="w-10 h-10 rounded-lg bg-gradient-to-br from-[#B8963C] to-[#D4AF47] flex items-center justify-center text-white text-sm font-bold shrink-0">&#x1f4ac;</span>
+                        Product & Business
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex gap-3 text-sm text-gray-600"><span class="text-[#B8963C] font-bold mt-0.5 shrink-0">→</span> Product-market fit > features. Build for the market, not your ego.</li>
+                        <li class="flex gap-3 text-sm text-gray-600"><span class="text-[#B8963C] font-bold mt-0.5 shrink-0">→</span> Customer discovery is continuous, not a one-time activity.</li>
+                        <li class="flex gap-3 text-sm text-gray-600"><span class="text-[#B8963C] font-bold mt-0.5 shrink-0">→</span> GTM strategy is as important as the product itself.</li>
+                        <li class="flex gap-3 text-sm text-gray-600"><span class="text-[#B8963C] font-bold mt-0.5 shrink-0">→</span> Know your market's willingness & ability to pay before building.</li>
+                        <li class="flex gap-3 text-sm text-gray-600"><span class="text-[#B8963C] font-bold mt-0.5 shrink-0">→</span> Ship fast, ship small. Perfect is the enemy of shipped.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-16 text-center">
+                <p class="text-gray-500 text-sm mb-4">
+                    Both products are no longer active, but the code and learnings live on.
+                </p>
+                <div class="flex items-center justify-center gap-4 text-sm text-gray-400 flex-wrap">
+                    <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-[#B8963C]"></span> Rust</span>
+                    <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-[#B8963C]"></span> Axum · Tokio · SQLx</span>
+                    <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-[#B8963C]"></span> Node.js · Express</span>
+                    <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-[#B8963C]"></span> PostgreSQL · Redis</span>
+                    <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-[#B8963C]"></span> Docker · Nginx · Linux</span>
+                    <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-[#B8963C]"></span> Gemini API</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ──────────────────────────────────────────────── -->
+    <!-- DIVIDER — THE PRODUCT                          -->
+    <!-- ──────────────────────────────────────────────── -->
+    <div id="product" class="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 py-10 text-center border-y border-gray-800 scroll-mt-14">
+        <p class="text-gray-400 text-sm uppercase tracking-widest font-medium">↓ The product I built ↓</p>
+    </div>
+
+    <!-- ──────────────────────────────────────────────── -->
+    <!-- LANDING PAGE — THE PRODUCT                     -->
+    <!-- ──────────────────────────────────────────────── -->
+    <main>
+        <nav class="border-b border-gray-200/80 bg-white/80 sticky top-14 z-40 backdrop-blur-md shadow-sm">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-20">
+                    <a href="#" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+                        <img src="public/logo-transparent.png" alt="MAKE CLIENT" class="h-10 w-auto object-contain" />
+                    </a>
+                    <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-700">
+                        <a href="#features" class="hover:text-[#B8963C] transition-colors">Features</a>
+                        <a href="#benefits" class="hover:text-[#B8963C] transition-colors">Benefits</a>
+                        <a href="/pricing" class="hover:text-[#B8963C] transition-colors">Pricing</a>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <a href="#">
+                            <span class="inline-flex items-center justify-center px-5 py-2.5 rounded-md text-sm font-medium bg-[#B8963C] hover:bg-[#A68534] text-white shadow-md hover:shadow-lg transition-all">Sign In</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <section class="relative bg-gradient-to-br from-white via-gray-50/50 to-[#B8963C]/5">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-24 text-center relative">
+                <div class="absolute top-20 right-10 w-20 h-20 bg-[#B8963C]/10 rounded-full blur-3xl"></div>
+                <div class="absolute bottom-20 left-10 w-32 h-32 bg-[#D4AF47]/10 rounded-full blur-3xl"></div>
+                <div class="inline-flex items-center gap-2 px-5 py-2.5 bg-white border-2 border-[#B8963C]/20 rounded-full mb-8 shadow-sm hover:shadow-md transition-shadow">
+                    <svg class="w-4 h-4 text-[#B8963C]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2v4m0 8v4m-6-6h4m4 0h4m-8 0a6 6 0 100-12 6 6 0 000 12z"/></svg>
+                    <span class="text-sm font-semibold text-[#B8963C]">Trusted by 500+ Finance Professionals</span>
+                </div>
+                <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-[1.1]">
+                    Client Relationships,
+                    <br/>
+                    <span class="text-gradient-gold">Amplified</span>
+                </h1>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-4 leading-relaxed">
+                    The complete platform for finance and accounting professionals to manage clients,
+                    automate compliance, and deliver exceptional service.
+                </p>
+                <p class="text-base text-gray-500 max-w-2xl mx-auto mb-12">
+                    Built for CAs, CMAs, Accountants, Tax Consultants, and Financial Advisors
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+                    <a href="#">
+                        <span class="inline-flex items-center justify-center px-10 py-4 rounded-md text-lg font-semibold bg-[#B8963C] hover:bg-[#A68534] text-white shadow-xl hover:shadow-2xl transition-all group">
+                            Access Platform
+                            <svg class="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7-7l7 7-7 7"/></svg>
+                        </span>
+                    </a>
+                    <a href="#">
+                        <span class="inline-flex items-center justify-center px-10 py-4 rounded-md text-lg font-semibold border-2 border-gray-300 hover:bg-gray-50 hover:border-[#B8963C] transition-all">Watch Demo Video</span>
+                    </a>
+                </div>
+                <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-gray-600">
+                    <div class="flex items-center gap-2">
+                        <svg class="h-5 w-5 text-green-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        <span class="font-medium">Reduce admin work by 70%</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <svg class="h-5 w-5 text-green-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        <span class="font-medium">Never miss a deadline</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <svg class="h-5 w-5 text-green-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        <span class="font-medium">Delight clients with transparency</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <svg class="h-5 w-5 text-green-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        <span class="font-medium">Scale without overhead</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 border-y border-gray-700 relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-r from-[#B8963C]/10 via-transparent to-[#D4AF47]/10"></div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <div class="text-center group cursor-default">
+                        <div class="text-4xl md:text-5xl font-bold bg-gradient-to-br from-[#B8963C] to-[#D4AF47] bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform">500+</div>
+                        <div class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Finance Firms</div>
+                    </div>
+                    <div class="text-center group cursor-default">
+                        <div class="text-4xl md:text-5xl font-bold bg-gradient-to-br from-[#B8963C] to-[#D4AF47] bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform">50K+</div>
+                        <div class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Documents Secured</div>
+                    </div>
+                    <div class="text-center group cursor-default">
+                        <div class="text-4xl md:text-5xl font-bold bg-gradient-to-br from-[#B8963C] to-[#D4AF47] bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform">99.9%</div>
+                        <div class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Uptime SLA</div>
+                    </div>
+                    <div class="text-center group cursor-default">
+                        <div class="text-4xl md:text-5xl font-bold bg-gradient-to-br from-[#B8963C] to-[#D4AF47] bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform">24/7</div>
+                        <div class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Expert Support</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="benefits" class="bg-white py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-3">Built for Finance Professionals</h2>
+                    <p class="text-lg text-gray-600">Serving diverse practices across the financial services industry</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="p-6 rounded-lg border-2 border-gray-100 hover:border-[#B8963C]/30 hover:shadow-lg transition-all bg-gradient-to-br from-white to-gray-50/50 card-hover">
+                        <div class="text-lg font-bold text-gray-900 mb-2">CAs & CMAs</div>
+                        <div class="text-sm text-gray-600">Audit, tax, compliance management</div>
+                    </div>
+                    <div class="p-6 rounded-lg border-2 border-gray-100 hover:border-[#B8963C]/30 hover:shadow-lg transition-all bg-gradient-to-br from-white to-gray-50/50 card-hover">
+                        <div class="text-lg font-bold text-gray-900 mb-2">Accounting Firms</div>
+                        <div class="text-sm text-gray-600">Bookkeeping, payroll, reporting</div>
+                    </div>
+                    <div class="p-6 rounded-lg border-2 border-gray-100 hover:border-[#B8963C]/30 hover:shadow-lg transition-all bg-gradient-to-br from-white to-gray-50/50 card-hover">
+                        <div class="text-lg font-bold text-gray-900 mb-2">Tax Consultants</div>
+                        <div class="text-sm text-gray-600">Filing, planning, advisory services</div>
+                    </div>
+                    <div class="p-6 rounded-lg border-2 border-gray-100 hover:border-[#B8963C]/30 hover:shadow-lg transition-all bg-gradient-to-br from-white to-gray-50/50 card-hover">
+                        <div class="text-lg font-bold text-gray-900 mb-2">CFO Services</div>
+                        <div class="text-sm text-gray-600">Financial planning & analysis</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="bg-gradient-to-br from-gray-50 via-white to-gray-50 py-24 relative">
+            <div class="absolute inset-0 opacity-[0.02]"><div class="absolute inset-0 bg-grid-line"></div></div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Everything you need to succeed</h2>
+                    <p class="text-xl text-gray-600 max-w-2xl mx-auto">Comprehensive tools designed for modern finance practices</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="p-8 rounded-lg border-2 border-gray-100 bg-white hover:border-[#B8963C]/40 hover:shadow-2xl transition-all duration-300 group card-hover">
+                        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#B8963C] to-[#D4AF47] flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all shadow-lg">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Client Management</h3>
+                        <p class="text-gray-600 leading-relaxed">Centralize all client data with smart organization, automated workflows, and deadline reminders.</p>
+                    </div>
+                    <div class="p-8 rounded-lg border-2 border-gray-100 bg-white hover:border-[#B8963C]/40 hover:shadow-2xl transition-all duration-300 group card-hover">
+                        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#B8963C] to-[#D4AF47] flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all shadow-lg">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Secure Messaging</h3>
+                        <p class="text-gray-600 leading-relaxed">Real-time communication hub with clients and team. Share files, track conversations, stay connected.</p>
+                    </div>
+                    <div class="p-8 rounded-lg border-2 border-gray-100 bg-white hover:border-[#B8963C]/40 hover:shadow-2xl transition-all duration-300 group card-hover">
+                        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#B8963C] to-[#D4AF47] flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all shadow-lg">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Document Management</h3>
+                        <p class="text-gray-600 leading-relaxed">Encrypted cloud storage with version control, digital signatures, and instant secure sharing.</p>
+                    </div>
+                    <div class="p-8 rounded-lg border-2 border-gray-100 bg-white hover:border-[#B8963C]/40 hover:shadow-2xl transition-all duration-300 group card-hover">
+                        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#B8963C] to-[#D4AF47] flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all shadow-lg">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Compliance Tracking</h3>
+                        <p class="text-gray-600 leading-relaxed">Automated deadline tracking for tax filings, audits, and regulatory submissions with smart alerts.</p>
+                    </div>
+                    <div class="p-8 rounded-lg border-2 border-gray-100 bg-white hover:border-[#B8963C]/40 hover:shadow-2xl transition-all duration-300 group card-hover">
+                        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#B8963C] to-[#D4AF47] flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all shadow-lg">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Analytics & Insights</h3>
+                        <p class="text-gray-600 leading-relaxed">Real-time dashboards showing practice performance, revenue trends, and client engagement metrics.</p>
+                    </div>
+                    <div class="p-8 rounded-lg border-2 border-gray-100 bg-white hover:border-[#B8963C]/40 hover:shadow-2xl transition-all duration-300 group card-hover">
+                        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#B8963C] to-[#D4AF47] flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all shadow-lg">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Enterprise Security</h3>
+                        <p class="text-gray-600 leading-relaxed">Bank-grade 256-bit encryption, two-factor authentication, SOC 2 compliance, and audit logs.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white py-24">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="p-12 rounded-lg border-2 border-gray-100 bg-gradient-to-br from-white via-gray-50/30 to-white shadow-2xl relative overflow-hidden text-center">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-[#B8963C]/5 rounded-full blur-3xl -z-10"></div>
+                    <div class="flex justify-center gap-1 mb-6">
+                        <svg class="w-6 h-6 fill-[#B8963C] text-[#B8963C]" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="w-6 h-6 fill-[#B8963C] text-[#B8963C]" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="w-6 h-6 fill-[#B8963C] text-[#B8963C]" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="w-6 h-6 fill-[#B8963C] text-[#B8963C]" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="w-6 h-6 fill-[#B8963C] text-[#B8963C]" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <blockquote class="text-2xl md:text-3xl text-gray-700 font-medium mb-8 leading-relaxed">
+                        &ldquo;MAKE CLIENT transformed how we serve our clients. We&rsquo;ve reduced administrative
+                        overhead by 70% and our client satisfaction scores have never been higher.&rdquo;
+                    </blockquote>
+                    <div class="flex items-center justify-center gap-4">
+                        <div class="w-16 h-16 rounded-full bg-gradient-to-br from-[#B8963C] to-[#D4AF47] flex items-center justify-center text-white font-bold text-xl shadow-lg">RS</div>
+                        <div class="text-left">
+                            <div class="font-bold text-gray-900 text-lg">Rajesh Sharma, CPA</div>
+                            <div class="text-sm text-gray-600">Managing Partner, Sharma & Associates</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="relative bg-gradient-to-br from-[#B8963C] via-[#B8963C] to-[#D4AF47] py-24 overflow-hidden">
+            <div class="absolute top-0 left-0 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Ready to amplify your practice?</h2>
+                <p class="text-xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed">Join 500+ finance professionals already saving 20+ hours per week</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+                    <a href="#">
+                        <span class="inline-flex items-center justify-center px-10 py-4 rounded-md text-lg font-bold bg-white hover:bg-gray-100 text-[#B8963C] shadow-2xl hover:shadow-3xl transition-all hover:scale-105">Start Free Trial →</span>
+                    </a>
+                    <a href="#">
+                        <span class="inline-flex items-center justify-center px-10 py-4 rounded-md text-lg font-bold border-2 border-white text-white hover:text-[#B8963C] hover:bg-white backdrop-blur-sm shadow-xl hover:shadow-3xl transition-all hover:scale-105">
+                            Schedule Demo
+                            <svg class="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7-7l7 7-7 7"/></svg>
+                        </span>
+                    </a>
+                </div>
+                <p class="text-sm text-white/80 font-medium flex items-center justify-center gap-6 flex-wrap">
+                    <span>&#x1f4b3; No credit card required</span>
+                    <span>•</span>
+                    <span>&#x1f381; 14-day free trial</span>
+                    <span>•</span>
+                    <span>&#x26a1; Cancel anytime</span>
+                </p>
+            </div>
+        </section>
+
+        <footer class="bg-gray-900 text-gray-300 border-t border-gray-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                <div class="grid md:grid-cols-3 gap-12 mb-12">
+                    <div>
+                        <img src="public/logo-white.png" alt="MAKE CLIENT" class="h-10 w-auto object-contain mb-4" />
+                        <p class="text-gray-400 text-sm leading-relaxed">Empowering finance professionals to build stronger client relationships.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white mb-4">Product</h4>
+                        <ul class="space-y-3 text-sm">
+                            <li><a href="#features" class="hover:text-[#B8963C] transition-colors">Features</a></li>
+                            <li><a href="#" class="hover:text-[#B8963C] transition-colors">Pricing</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white mb-4">Company</h4>
+                        <ul class="space-y-3 text-sm">
+                            <li><a href="#" class="hover:text-[#B8963C] transition-colors">About Us</a></li>
+                            <li><a href="#" class="hover:text-[#B8963C] transition-colors">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                    <p class="text-sm text-gray-400">&copy; 2024 MAKE CLIENT. All rights reserved.</p>
+                    <div class="flex gap-6 text-sm">
+                        <a href="#" class="hover:text-[#B8963C] transition-colors">Privacy Policy</a>
+                        <a href="#" class="hover:text-[#B8963C] transition-colors">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- ──────────────────────────────────────────────── -->
+    <!-- EXPERIENCE TIMELINE                            -->
+    <!-- ──────────────────────────────────────────────── -->
+    <section id="experience" class="bg-white py-24 scroll-mt-14">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center gap-2 px-4 py-2 bg-[#B8963C]/10 border border-[#B8963C]/20 rounded-full mb-6">
+                    <span class="text-xs font-bold text-[#B8963C] uppercase tracking-wider">Background</span>
+                </div>
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">
+                    Experience <span class="text-gradient-gold">Timeline</span>
+                </h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    2.5 years shipping production systems — from government platforms to failed startups
+                </p>
+            </div>
+
+            <div class="relative">
+                <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gray-200 -translate-x-1/2"></div>
+
+                <div class="relative mb-12">
+                    <div class="flex flex-col md:flex-row items-start gap-6 md:gap-12">
+                        <div class="md:w-1/2 md:text-right order-2 md:order-1">
+                            <div class="bg-white border-2 border-gray-100 rounded-2xl p-6 card-hover hover:border-[#B8963C]/40">
+                                <span class="text-xs font-bold text-[#B8963C] uppercase tracking-wider">Oct 2025 – May 2026</span>
+                                <h3 class="text-lg font-bold text-gray-900 mt-1">Founder &amp; Backend Engineer</h3>
+                                <p class="text-sm font-medium text-gray-500 mb-3">MakeClient</p>
+                                <ul class="space-y-2 text-sm text-gray-600">
+                                    <li class="flex gap-2"><span class="text-[#B8963C] mt-1 shrink-0">→</span> Built and deployed a SaaS platform for CAs with real users and paying customers</li>
+                                    <li class="flex gap-2"><span class="text-[#B8963C] mt-1 shrink-0">→</span> Designed REST APIs, JWT auth, RBAC, MySQL schemas for billing, tasks, documents</li>
+                                    <li class="flex gap-2"><span class="text-[#B8963C] mt-1 shrink-0">→</span> Managed production: Docker, GitHub Actions, Nginx, AWS Linux, Redis sessions</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2 order-1 md:order-2 flex items-center">
+                            <div class="w-8 h-8 rounded-full bg-gradient-to-br from-[#B8963C] to-[#D4AF47] flex items-center justify-center text-white text-xs font-bold shadow-lg z-10 flex-shrink-0">M</div>
+                            <div class="ml-4 md:hidden"><span class="text-xs font-bold text-[#B8963C]">Oct 2025 – May 2026</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative mb-12">
+                    <div class="flex flex-col md:flex-row items-start gap-6 md:gap-12">
+                        <div class="md:w-1/2 md:order-2">
+                            <div class="bg-white border-2 border-gray-100 rounded-2xl p-6 card-hover hover:border-[#B8963C]/40">
+                                <span class="text-xs font-bold text-[#B8963C] uppercase tracking-wider">May 2025 – Jan 2026</span>
+                                <h3 class="text-lg font-bold text-gray-900 mt-1">Co-Founder &amp; Full-Stack Developer</h3>
+                                <p class="text-sm font-medium text-gray-500 mb-3">Winqroo — AI Content Intelligence Platform</p>
+                                <ul class="space-y-2 text-sm text-gray-600">
+                                    <li class="flex gap-2"><span class="text-[#B8963C] mt-1 shrink-0">→</span> AI assistant for creators/agencies — audience analytics across YouTube, Instagram, TikTok, Twitch</li>
+                                    <li class="flex gap-2"><span class="text-[#B8963C] mt-1 shrink-0">→</span> Smart analytics dashboard, AI channel summaries, personalized growth recommendations</li>
+                                    <li class="flex gap-2"><span class="text-[#B8963C] mt-1 shrink-0">→</span> Scriptwriting &amp; ideation in multiple local languages (Hindi, etc.)</li>
+                                    <li class="flex gap-2"><span class="text-[#B8963C] mt-1 shrink-0">→</span> Shipped MVP, wound down after early validation showed weak PMF</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2 md:order-1 flex md:justify-end items-center">
+                            <div class="w-8 h-8 rounded-full bg-gradient-to-br from-[#B8963C] to-[#D4AF47] flex items-center justify-center text-white text-xs font-bold shadow-lg z-10 flex-shrink-0">W</div>
+                            <div class="ml-4 md:hidden"><span class="text-xs font-bold text-[#B8963C]">May 2025 – Jan 2026</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative mb-12">
+                    <div class="flex flex-col md:flex-row items-start gap-6 md:gap-12">
+                        <div class="md:w-1/2 md:text-right order-2 md:order-1">
+                            <div class="bg-white border-2 border-gray-100 rounded-2xl p-6 card-hover hover:border-[#B8963C]/40">
+                                <span class="text-xs font-bold text-[#B8963C] uppercase tracking-wider">Aug 2024 – Oct 2025</span>
+                                <h3 class="text-lg font-bold text-gray-900 mt-1">Full-Stack Developer &amp; Backend Engineer</h3>
+                                <p class="text-sm font-medium text-gray-500 mb-3">Uzvi Services</p>
+                                <ul class="space-y-2 text-sm text-gray-600">
+                                    <li class="flex gap-2"><span class="text-[#B8963C] mt-1 shrink-0">→</span> Built MOEAP Employee Mgmt System for Ministry of Energy, AP — Node.js, React, MySQL, AWS</li>
+                                    <li class="flex gap-2"><span class="text-[#B8963C] mt-1 shrink-0">→</span> Built Drift — Rust CLI tool for visual PostgreSQL schema diffing</li>
+                                    <li class="flex gap-2"><span class="text-[#B8963C] mt-1 shrink-0">→</span> Migrated e-commerce platform from PHP to Node.js + React</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2 order-1 md:order-2 flex items-center">
+                            <div class="w-8 h-8 rounded-full bg-gradient-to-br from-[#B8963C] to-[#D4AF47] flex items-center justify-center text-white text-xs font-bold shadow-lg z-10 flex-shrink-0">U</div>
+                            <div class="ml-4 md:hidden"><span class="text-xs font-bold text-[#B8963C]">Aug 2024 – Oct 2025</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="flex flex-col md:flex-row items-start gap-6 md:gap-12">
+                        <div class="md:w-1/2 md:order-2">
+                            <div class="bg-white border-2 border-gray-100 rounded-2xl p-6 card-hover hover:border-[#B8963C]/40">
+                                <span class="text-xs font-bold text-[#B8963C] uppercase tracking-wider">Oct 2023 – May 2024</span>
+                                <h3 class="text-lg font-bold text-gray-900 mt-1">Machine Learning Engineer</h3>
+                                <p class="text-sm font-medium text-gray-500 mb-3">SpyPro Security Solutions</p>
+                                <ul class="space-y-2 text-sm text-gray-600">
+                                    <li class="flex gap-2"><span class="text-[#B8963C] mt-1 shrink-0">→</span> Built &amp; deployed production RAG chatbot with Python, NLP, AWS</li>
+                                    <li class="flex gap-2"><span class="text-[#B8963C] mt-1 shrink-0">→</span> Rebuilt embedding pipeline in Rust (candle) for perf &amp; lower memory</li>
+                                    <li class="flex gap-2"><span class="text-[#B8963C] mt-1 shrink-0">→</span> Developed CRM supporting 2000+ concurrent users (Python/Django + Node.js)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2 md:order-1 flex md:justify-end items-center">
+                            <div class="w-8 h-8 rounded-full bg-gradient-to-br from-[#B8963C] to-[#D4AF47] flex items-center justify-center text-white text-xs font-bold shadow-lg z-10 flex-shrink-0">S</div>
+                            <div class="ml-4 md:hidden"><span class="text-xs font-bold text-[#B8963C]">Oct 2023 – May 2024</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ──────────────────────────────────────────────── -->
+    <!-- FINAL FOOTER                                   -->
+    <!-- ──────────────────────────────────────────────── -->
+    <footer class="bg-gray-900 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                <div class="flex items-center gap-3">
+                    <img src="public/logo-white.png" alt="MAKE CLIENT" class="h-7 w-auto object-contain" />
+                    <span class="text-gray-500 font-normal text-sm hidden sm:inline">make client</span>
+                </div>
+                <p class="text-gray-500 text-xs text-center">
+                    Backend Engineer · 2.5 yrs · Rust / Node.js · PostgreSQL · Docker · Linux · AWS<br/>
+                    Two startups. Zero exits. Infinite learnings.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
